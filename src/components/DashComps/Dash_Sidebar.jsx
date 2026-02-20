@@ -20,13 +20,18 @@ import {
 } from "lucide-react";
 
 const items = [
-  { title: "Home", url: "/", icon: Home },
-  { title: "Earn", url: "/earn", icon: BanknoteArrowUp },
-  { title: "Withdraw", url: "/Withdraw", icon: BanknoteArrowDown },
-  { title: "Transaction", url: "/transaction", icon: ArrowLeftRight },
-  { title: "Transfer History", url: "/transaction-history", icon: History },
+  { title: "Home", url: "/wallet/dashboard", icon: Home },
+  { title: "Earn", url: "/wallet/earn", icon: BanknoteArrowUp },
+  { title: "Withdraw", url: "/wallet/withdraw", icon: BanknoteArrowDown },
+  { title: "Transaction", url: "/wallet/transaction", icon: ArrowLeftRight },
+  {
+    title: "Transfer History",
+    url: "/wallet/transaction-history",
+    icon: History,
+  },
   // { title: "Users", url: "/users", icon: Users },
 ];
+import { Link } from "react-router-dom";
 
 export default function AppSidebar() {
   return (
@@ -51,26 +56,30 @@ export default function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title} className={`relative py-4`}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-3 ">
+                    <Link to={item.url} className="flex items-center gap-3 ">
                       <span>
                         <item.icon size={28} />
                       </span>
 
                       <span className="text-2xl ">{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
               {/* wait */}
               <SidebarMenuItem className={`fixed  bottom-0 py-4`}>
                 <SidebarMenuButton asChild>
-                  <a href={"/profile"} className="flex items-center gap-3 ">
+                  <Link
+                    to="/wallet/profile"
+                    className="flex items-center gap-3 "
+                  >
+                    {/* <a href={"/profile"} className="flex items-center gap-3 "> */}
                     <span>
                       <Users size={28} />
                     </span>
 
                     <span className="text-2xl "> Profile </span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               {/* wait */}

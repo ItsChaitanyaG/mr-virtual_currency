@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import {
-    IconCurrencyBitcoin,
     IconBrandGithub,
     IconBrandTwitter,
     IconMail,
 } from "@tabler/icons-react";
+import logo from "@/assets/Gemini_Generated_Image_5x0pfd5x0pfd5x0p.png";
 
 export default function Footer() {
     return (
@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div className="md:col-span-1">
                     <Link to="/" className="flex items-center gap-2 mb-3">
-                        <IconCurrencyBitcoin className="size-6 text-violet-400" />
+                        <img src={logo} alt="MR Virtual Currency" className="size-6 rounded-md object-cover" />
                         <span className="text-base font-bold">MR Virtual Currency</span>
                     </Link>
                     <p className="text-sm text-slate-500 leading-relaxed">

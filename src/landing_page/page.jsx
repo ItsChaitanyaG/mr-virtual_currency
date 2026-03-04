@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import {
     IconWallet,
     IconArrowRight,
-    IconCurrencyBitcoin,
     IconShieldCheck,
     IconBolt,
     IconChartBar,
@@ -13,6 +12,7 @@ import {
     IconClock,
 } from "@tabler/icons-react";
 import Footer from "@/components/ui/footer";
+import logo from "@/assets/Gemini_Generated_Image_5x0pfd5x0pfd5x0p.png";
 
 const LandingPage = () => {
     // Live countdown timer for "Next Cycle"
@@ -130,7 +130,7 @@ const LandingPage = () => {
         <div className="min-h-screen text-white">
             <nav className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-slate-800/60 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2">
-                    <IconCurrencyBitcoin className="size-8 text-violet-400" />
+                    <img src={logo} alt="MR Virtual Currency" className="size-8 rounded-lg object-cover" />
                     <span className="text-xl font-bold tracking-tight">
                         MR&nbsp;Virtual&nbsp;Currency
                     </span>
